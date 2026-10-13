@@ -25,7 +25,7 @@ binds {
     Mod+B hotkey-overlay-title="Open Browser: Microsoft Edge" { spawn "microsoft-edge-stable"; }
     Mod+I hotkey-overlay-title="Open IDE: VS Code" { spawn "code"; }
     Mod+N hotkey-overlay-title="Open Notification Center" { spawn "swaync-client" "-t" "-sw"; }
-    Mod+Alt+L hotkey-overlay-title="Lock Screen" { spawn "sh" "-c" "$HOME/.local/bin/lock.sh"; }
+    // Mod+Alt+L hotkey-overlay-title="Lock Screen" { spawn "sh" "-c" "$HOME/.local/bin/lock.sh"; }
     Mod+L hotkey-overlay-title="Adjust Brightness" { spawn "gammastep" "-O" "4200K"; }
     Mod+Shift+L hotkey-overlay-title="Reset Brightness" { spawn "pkill" "gammastep"; }
 
