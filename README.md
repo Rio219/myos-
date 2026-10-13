@@ -1,11 +1,12 @@
-# 🍙 Haku Dotfiles (CachyOS / Arch Linux)
+# 🍙 MyOS - Rio Hoang's Custom Rice & Dotfiles (CachyOS / Niri)
 
-Bộ cấu hình cá nhân hóa tối ưu cao dành cho **CachyOS (Arch Linux)** chạy trình quản lý cửa sổ dạng cuộn vô tận **Niri (Wayland)**.
+> **Bản tùy biến cá nhân của [Rio Hoang](https://github.com/Rio219)** dành cho **CachyOS (Arch Linux)** với trình quản lý cửa sổ cuộn vô tận **Niri (Wayland)**. Được tối ưu toàn diện về độ ổn định bộ nhớ, phím tắt nhanh, giao diện tối cứng cáp và quy trình lập trình mượt mà.
 
 ---
 
 ## 🖥️ Thông số môi trường (System Specs)
 
+- **Author**: **Rio Hoang** ([@Rio219](https://github.com/Rio219))
 - **Hệ điều hành**: CachyOS Linux (Kernel `linux-cachyos`)
 - **Trình quản lý cửa sổ**: [Niri](https://github.com/YaLTeR/niri) (Scrollable-tiling Wayland compositor)
 - **Thanh trạng thái**: [Waybar](https://github.com/Alexays/Waybar)
@@ -15,6 +16,7 @@ Bộ cấu hình cá nhân hóa tối ưu cao dành cho **CachyOS (Arch Linux)**
 - **Trình soạn thảo (IDE)**: Visual Studio Code (`One Dark Pro Darker` + `JetBrainsMono Nerd Font`)
 - **Trung tâm thông báo**: [SwayNC](https://github.com/ErikReider/SwayNotificationCenter)
 - **Âm thanh & Bluetooth**: PipeWire + WirePlumber (Tự động chuyển đổi codec A2DP/HFP) + EasyEffects
+- **Ổn định hệ thống**: `earlyoom` + NVMe Swap backing ZRAM (Chống treo/đơ máy khi tràn RAM)
 
 ---
 
@@ -43,7 +45,7 @@ Khi cài lại máy hoặc chuyển sang laptop mới, bạn chỉ cần thực 
 
 ```bash
 # 1. Clone repository về thư mục cá nhân
-git clone git@github.com:Rio219/dotfiles.git ~/dotfiles
+git clone git@github.com:Rio219/myos-.git ~/dotfiles
 
 # 2. Di chuyển vào thư mục và chạy script tự động liên kết
 cd ~/dotfiles
