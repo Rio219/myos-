@@ -122,10 +122,6 @@
                         "command": "systemctl reboot"
                     },
                     {
-                        "label": "   Lock",
-                        "command": "$HOME/.local/bin/lock.sh"
-                    },
-                    {
                         "label": "   Exit",
                         "command": "$HOME/.local/bin/exit.sh"
                     },

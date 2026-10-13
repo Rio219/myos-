@@ -5,7 +5,6 @@ options="󱠩 Hibernate
  Reboot
  Power Off
 󰒲 Sleep
-󱅞 Lock
 󰩈 Exit"
 
 # Design rofi
