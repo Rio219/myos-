@@ -1,0 +1,133 @@
+// ────────────── Key Bindings (Đã Việt hóa Bảng Hotkey Overlay) ──────────────
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Key-Bindings
+
+binds {
+    // ─── Trợ giúp Hotkey ───
+    Mod+Shift+ESCAPE                     hotkey-overlay-title="Hiện bảng phím tắt hệ thống" { show-hotkey-overlay; }
+
+    // ─── Ứng dụng ───
+    Mod+Return                          hotkey-overlay-title="Mở Terminal: Kitty" { spawn "kitty"; }
+    Mod+CTRL+Return                     hotkey-overlay-title="Mở trình tìm ứng dụng: Noctalia" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    Mod+B                               hotkey-overlay-title="Mở trình duyệt: Firefox" { spawn "firefox"; }
+    Mod+ALT+L                           hotkey-overlay-title="Khóa màn hình (Hyprlock)" { spawn "hyprlock"; }
+    Mod+Shift+Q                        hotkey-overlay-title="Menu đăng xuất / Tắt máy" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+    Mod+E                               hotkey-overlay-title="Mở quản lý file: Nautilus" { spawn "nautilus"; }
+
+    // ─── Điều khiển Âm thanh & Micro ───
+    F1                                  allow-when-locked=true hotkey-overlay-title="Tắt / Bật tiếng (F1)" { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    F2                                  allow-when-locked=true hotkey-overlay-title="Giảm âm lượng (F2)" { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"; }
+    F3                                  allow-when-locked=true hotkey-overlay-title="Tăng âm lượng (F3)" { spawn-sh "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"; }
+    F4                                  allow-when-locked=true hotkey-overlay-title="Tắt / Bật Micro (F4)" { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    Mod+F1                              allow-when-locked=true hotkey-overlay-title="Tắt / Bật tiếng (Mod+F1)" { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    Mod+F2                              allow-when-locked=true hotkey-overlay-title="Giảm âm lượng (Mod+F2)" { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"; }
+    Mod+F3                              allow-when-locked=true hotkey-overlay-title="Tăng âm lượng (Mod+F3)" { spawn-sh "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"; }
+    Mod+F4                              allow-when-locked=true hotkey-overlay-title="Tắt / Bật Micro (Mod+F4)" { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioRaiseVolume                allow-when-locked=true hotkey-overlay-title="Tăng âm lượng" { spawn-sh "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"; }
+    XF86AudioLowerVolume                allow-when-locked=true hotkey-overlay-title="Giảm âm lượng" { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"; }
+    XF86AudioMute                       allow-when-locked=true hotkey-overlay-title="Tắt / Bật tiếng" { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute                    allow-when-locked=true hotkey-overlay-title="Tắt / Bật Micro" { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    XF86AudioNext                       allow-when-locked=true hotkey-overlay-title="Bài tiếp theo" { spawn-sh "playerctl next"; }
+    XF86AudioPrev                       allow-when-locked=true hotkey-overlay-title="Bài trước đó" { spawn-sh "playerctl previous"; }
+    XF86AudioPlay                       allow-when-locked=true hotkey-overlay-title="Phát / Tạm dừng nhạc" { spawn-sh "playerctl play-pause"; }
+    XF86AudioPause                      allow-when-locked=true hotkey-overlay-title="Phát / Tạm dừng nhạc" { spawn-sh "playerctl play-pause"; }
+
+    // ─── Điều khiển Độ sáng ───
+    F6                                  allow-when-locked=true hotkey-overlay-title="Tăng độ sáng (F6)" { spawn-sh "brightnessctl set 5%+"; }
+    F5                                  allow-when-locked=true hotkey-overlay-title="Giảm độ sáng (F5)" { spawn-sh "brightnessctl set 5%-"; }
+    Mod+F6                              allow-when-locked=true hotkey-overlay-title="Tăng độ sáng (Mod+F6)" { spawn-sh "brightnessctl set 5%+"; }
+    Mod+F5                              allow-when-locked=true hotkey-overlay-title="Giảm độ sáng (Mod+F5)" { spawn-sh "brightnessctl set 5%-"; }
+    XF86MonBrightnessUp                 allow-when-locked=true hotkey-overlay-title="Tăng độ sáng màn hình" { spawn-sh "brightnessctl set 5%+"; }
+    XF86MonBrightnessDown               allow-when-locked=true hotkey-overlay-title="Giảm độ sáng màn hình" { spawn-sh "brightnessctl set 5%-"; }
+
+    // ─── Di chuyển & Tiêu điểm Cửa sổ ───
+    Mod+Q                               hotkey-overlay-title="Đóng cửa sổ hiện tại" { close-window; }
+
+    Mod+Left                            hotkey-overlay-title="Chuyển tiêu điểm sang Trái" { focus-column-left; }
+    Mod+H                               { focus-column-left; }
+    Mod+Right                           hotkey-overlay-title="Chuyển tiêu điểm sang Phải" { focus-column-right; }
+    Mod+L                               { focus-column-right; }
+    Mod+Up                              hotkey-overlay-title="Chuyển tiêu điểm Lên trên" { focus-window-up; }
+    Mod+K                               { focus-window-up; }
+    Mod+Down                            hotkey-overlay-title="Chuyển tiêu điểm Xuống dưới" { focus-window-down; }
+    Mod+J                               { focus-window-down; }
+
+    Mod+CTRL+Left                       hotkey-overlay-title="Di chuyển cột sang Trái" { move-column-left; }
+    Mod+CTRL+H                          { move-column-left; }
+    Mod+CTRL+Right                      hotkey-overlay-title="Di chuyển cột sang Phải" { move-column-right; }
+    Mod+CTRL+L                          { move-column-right; }
+    Mod+CTRL+UP                         hotkey-overlay-title="Di chuyển cửa sổ Lên trên" { move-window-up; }
+    Mod+CTRL+K                          { move-window-up; }
+    Mod+CTRL+Down                       hotkey-overlay-title="Di chuyển cửa sổ Xuống dưới" { move-window-down; }
+    Mod+CTRL+J                          { move-window-down; }
+
+    Mod+Home                            hotkey-overlay-title="Về cột đầu tiên" { focus-column-first; }
+    Mod+End                             hotkey-overlay-title="Đến cột cuối cùng" { focus-column-last; }
+    Mod+CTRL+Home                       hotkey-overlay-title="Chuyển cột về đầu tiên" { move-column-to-first; }
+    Mod+CTRL+End                        hotkey-overlay-title="Chuyển cột về cuối cùng" { move-column-to-last; }
+
+    Mod+Shift+Left                      hotkey-overlay-title="Chuyển sang màn hình bên Trái" { focus-monitor-left; }
+    Mod+Shift+Right                     hotkey-overlay-title="Chuyển sang màn hình bên Phải" { focus-monitor-right; }
+    Mod+Shift+UP                        hotkey-overlay-title="Chuyển sang màn hình phía Trên" { focus-monitor-up; }
+    Mod+Shift+Down                      hotkey-overlay-title="Chuyển sang màn hình phía Dưới" { focus-monitor-down; }
+
+    Mod+Shift+CTRL+Left                 hotkey-overlay-title="Di chuyển cột sang màn hình Trái" { move-column-to-monitor-left; }
+    Mod+Shift+CTRL+Right                hotkey-overlay-title="Di chuyển cột sang màn hình Phải" { move-column-to-monitor-right; }
+    Mod+Shift+CTRL+UP                   hotkey-overlay-title="Di chuyển cột sang màn hình Trên" { move-column-to-monitor-up; }
+    Mod+Shift+CTRL+Down                 hotkey-overlay-title="Di chuyển cột sang màn hình Dưới" { move-column-to-monitor-down; }
+
+    // ─── Chuyển đổi Workspace ───
+    Mod+WheelScrollDown                 cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp                   cooldown-ms=150 { focus-workspace-up; }
+    Mod+CTRL+WheelScrollDown            cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+CTRL+WheelScrollUp              cooldown-ms=150 { move-column-to-workspace-up; }
+
+    Mod+1                               hotkey-overlay-title="Chuyển sang Workspace 1" { focus-workspace 1; }
+    Mod+2                               hotkey-overlay-title="Chuyển sang Workspace 2" { focus-workspace 2; }
+    Mod+3                               hotkey-overlay-title="Chuyển sang Workspace 3" { focus-workspace 3; }
+    Mod+4                               hotkey-overlay-title="Chuyển sang Workspace 4" { focus-workspace 4; }
+    Mod+5                               hotkey-overlay-title="Chuyển sang Workspace 5" { focus-workspace 5; }
+    Mod+6                               hotkey-overlay-title="Chuyển sang Workspace 6" { focus-workspace 6; }
+    Mod+7                               hotkey-overlay-title="Chuyển sang Workspace 7" { focus-workspace 7; }
+    Mod+8                               hotkey-overlay-title="Chuyển sang Workspace 8" { focus-workspace 8; }
+    Mod+9                               hotkey-overlay-title="Chuyển sang Workspace 9" { focus-workspace 9; }
+
+    Mod+CTRL+1                          hotkey-overlay-title="Chuyển cột sang Workspace 1" { move-column-to-workspace 1; }
+    Mod+CTRL+2                          hotkey-overlay-title="Chuyển cột sang Workspace 2" { move-column-to-workspace 2; }
+    Mod+CTRL+3                          hotkey-overlay-title="Chuyển cột sang Workspace 3" { move-column-to-workspace 3; }
+    Mod+CTRL+4                          hotkey-overlay-title="Chuyển cột sang Workspace 4" { move-column-to-workspace 4; }
+    Mod+CTRL+5                          hotkey-overlay-title="Chuyển cột sang Workspace 5" { move-column-to-workspace 5; }
+    Mod+CTRL+6                          hotkey-overlay-title="Chuyển cột sang Workspace 6" { move-column-to-workspace 6; }
+    Mod+CTRL+7                          hotkey-overlay-title="Chuyển cột sang Workspace 7" { move-column-to-workspace 7; }
+    Mod+CTRL+8                          hotkey-overlay-title="Chuyển cột sang Workspace 8" { move-column-to-workspace 8; }
+    Mod+CTRL+9                          hotkey-overlay-title="Chuyển cột sang Workspace 9" { move-column-to-workspace 9; }
+
+    Mod+TAB                             hotkey-overlay-title="Quay lại Workspace trước đó" { focus-workspace-previous; }
+
+    // ─── Bố cục & Kích thước Cửa sổ ───
+    Mod+CTRL+F                          hotkey-overlay-title="Mở rộng cột tối đa" { expand-column-to-available-width; }
+    Mod+C                               hotkey-overlay-title="Căn giữa cột hiện tại" { center-column; }
+    Mod+CTRL+C                          hotkey-overlay-title="Căn giữa các cột đang hiển thị" { center-visible-columns; }
+    Mod+Minus                           hotkey-overlay-title="Thu hẹp chiều rộng cột (-10%)" { set-column-width "-10%"; }
+    Mod+Equal                           hotkey-overlay-title="Tăng chiều rộng cột (+10%)" { set-column-width "+10%"; }
+    Mod+Shift+Minus                     hotkey-overlay-title="Giảm chiều cao cửa sổ (-10%)" { set-window-height "-10%"; }
+    Mod+Shift+Equal                     hotkey-overlay-title="Tăng chiều cao cửa sổ (+10%)" { set-window-height "+10%"; }
+
+    // ─── Chế độ Cửa sổ ───
+    Mod+T                               hotkey-overlay-title="Bật / Tắt cửa sổ nổi (Floating)" { toggle-window-floating; }
+    Mod+F                               hotkey-overlay-title="Bật / Tắt toàn màn hình (Fullscreen)" { fullscreen-window; }
+    Mod+W                               hotkey-overlay-title="Bật / Tắt giao diện Tab (Tabbed)" { toggle-column-tabbed-display; }
+
+    // ─── Chụp màn hình ───
+    CTRL+Shift+1                        hotkey-overlay-title="Chụp vùng màn hình tùy chọn" { screenshot; }
+    CTRL+Shift+2                        hotkey-overlay-title="Chụp toàn bộ màn hình" { screenshot-screen; }
+    CTRL+Shift+3                        hotkey-overlay-title="Chụp riêng cửa sổ đang chọn" { screenshot-window; }
+
+    // ─── Khóa phím tắt khẩn cấp ───
+    Mod+ESCAPE                          allow-inhibiting=false hotkey-overlay-title="Bật / Tắt bỏ qua phím tắt ứng dụng" { toggle-keyboard-shortcuts-inhibit; }
+
+    // ─── Nguồn / Thoát ───
+    CTRL+ALT+Delete                     hotkey-overlay-title="Thoát Niri" { quit; }
+    Mod+Shift+P                         hotkey-overlay-title="Tắt màn hình" { power-off-monitors; }
+    Mod+O                               repeat=false hotkey-overlay-title="Bật / Tắt chế độ Tổng quan (Overview)" { toggle-overview; }
+}
